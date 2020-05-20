@@ -13,8 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "netlify-lambda": "^1.6.3",
-    "serverless-http": "^2.4.1",
-    "express": "^4.17.1"
+    "serve-index": "^1.9.1",
+    "serve-static": "^1.14.1",
+    "serverless-http": "^2.4.1"
   }
 }
