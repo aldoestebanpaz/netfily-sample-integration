@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist/functions && mkdir -p dist/frontend && chmod +x ./create-env.sh && ./create-env.sh && npm run build:backend && npm run build:frontend",
+    "build": "mkdir -p dist/functions && mkdir -p dist/frontend && npm run build:backend && npm run build:frontend && npm run build:env",
     "build:frontend": "cd frontend && npm install && npm run build && mv build ../dist/frontend",
     "build:backend": "cd backend && npm install && cd .. && netlify-lambda build src",
+    "build:env": "chmod +x ./create-env.sh && ./create-env.sh",
     "start": "cd backend && npm install && cd .. && netlify-lambda serve src"
   },
   "keywords": [],
