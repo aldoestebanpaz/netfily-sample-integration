@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir dist && chmod +x ./create-env.sh && ./create-env.sh && npm run build:backend && npm run build:frontend",
+    "build": "mkdir -p dist/functions && mkdir -p dist/frontend && chmod +x ./create-env.sh && ./create-env.sh && npm run build:backend && npm run build:frontend",
     "build:frontend": "cd frontend && npm install && npm run build && mv build ../dist/frontend",
     "build:backend": "cd backend && npm install && cd .. && netlify-lambda build src",
     "start": "cd backend && npm install && cd .. && netlify-lambda serve src"
