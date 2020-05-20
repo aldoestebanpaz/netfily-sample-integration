@@ -1,0 +1,19 @@
+{
+  "name": "netfily-sample-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:frontend": "cd frontend && npm install && npm run build && mv build ../dist/frontend",
+    "build:backend": "cd backend && npm install && cd .. && netlify-lambda build src",
+    "start": "cd backend && npm install && cd .. && netlify-lambda serve src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "netlify-lambda": "^1.6.3",
+    "serverless-http": "^2.4.1",
+    "express": "^4.17.1"
+  }
+}

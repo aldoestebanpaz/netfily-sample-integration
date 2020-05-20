@@ -1,0 +1,7 @@
+[build]
+  # This will be run the site build
+  command = "mkdir dist && npm install && npm run build:backend && npm run build:frontend"
+  # functions build directory
+  functions = "dist/functions"
+  # serve all files in this directory statically
+  publish = "dist/frontend"
