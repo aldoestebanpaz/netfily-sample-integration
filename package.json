@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "mkdir -p dist/functions && mkdir -p dist/frontend && npm run build:backend && npm run build:frontend",
-    "build:frontend": "cd frontend && npm install && npm run build && mv build ../dist/frontend",
+    "build:frontend": "cd frontend && npm install && npm run build && mv build/* ../dist/frontend",
     "build:backend": "cd backend && npm install && cd .. && netlify-lambda build src",
     "start": "cd backend && npm install && cd .. && netlify-lambda serve src"
   },
