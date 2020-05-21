@@ -5,3 +5,10 @@
   functions = "dist/functions"
   # serve all files in this directory statically
   publish = "dist/frontend"
+
+# Rewrite rule, intended for use with most SPAs that handle
+# routing internally.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
