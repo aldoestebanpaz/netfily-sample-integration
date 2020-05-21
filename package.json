@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "mkdir -p dist/functions && mkdir -p dist/frontend && npm run build:backend && npm run build:frontend",
-    "build:frontend": "cd frontend && npm install && npm run build && mv build/* ../dist/frontend",
+    "build:frontend": "cd frontend && npm install && env-cmd -f ../.env npm run build && mv build/* ../dist/frontend",
     "build:backend": "cd backend && npm install && cd .. && netlify-lambda build src"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "serverless-http": "^2.4.1"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "netlify-lambda": "^1.6.3"
   }
 }
