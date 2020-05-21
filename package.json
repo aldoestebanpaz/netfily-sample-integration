@@ -3,19 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "mkdir -p dist/functions && mkdir -p dist/frontend && npm run build:backend && npm run build:frontend",
-    "build:frontend": "cd frontend && npm install && env-cmd -f ../.env npm run build && mv build/* ../dist/frontend",
-    "build:backend": "cd backend && npm install && cd .. && netlify-lambda build src"
+    "build": "rimraf dist && mkdirp dist/functions && mkdirp dist/frontend && npm run build:backend && npm run build:frontend",
+    "build:frontend": "cd frontend && npm install && env-cmd -f ../react.env npm run build && mv build/* ../dist/frontend",
+    "build:backend": "cd backend && npm install && cd .. && netlify-lambda build src",
+    "start:backend": "cd backend && npm install && cd .. && netlify-lambda serve src"
   },
   "keywords": [],
   "author": "Aldo Esteban Paz",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
     "serverless-http": "^2.4.1"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "netlify-lambda": "^1.6.3"
+    "mkdirp": "^1.0.4",
+    "netlify-lambda": "^1.6.3",
+    "rimraf": "^3.0.2"
   }
 }
